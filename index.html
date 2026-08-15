@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="পারুল ফ্যাশন ওয়ার্ল্ড - সুমি আক্তার">
+  <title>পারুল ফ্যাশন ওয়ার্ল্ড | সুমি আক্তার</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap');
+
+    * { box-sizing: border-box; }
+
+    :root {
+      --primary: #8e2455;
+      --primary-dark: #641638;
+      --soft: #fff4f8;
+      --text: #29212a;
+      --muted: #7d727b;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Noto Sans Bengali", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(255, 194, 220, .75), transparent 30%),
+        radial-gradient(circle at 90% 90%, rgba(232, 184, 208, .55), transparent 32%),
+        linear-gradient(135deg, #fff8fb 0%, #f8edf3 48%, #f4e4ec 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px 16px;
+      overflow-x: hidden;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 440px;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      background: rgba(255,255,255,.94);
+      border: 1px solid rgba(255,255,255,.9);
+      border-radius: 30px;
+      box-shadow: 0 24px 70px rgba(95, 34, 64, .18);
+      backdrop-filter: blur(12px);
+    }
+
+    .cover {
+      height: 145px;
+      position: relative;
+      background:
+        linear-gradient(135deg, rgba(142,36,85,.98), rgba(100,22,56,.96)),
+        radial-gradient(circle at 80% 20%, #f7bfd5, transparent 30%);
+    }
+
+    .cover::before,
+    .cover::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 50%;
+    }
+
+    .cover::before {
+      width: 190px;
+      height: 190px;
+      right: -65px;
+      top: -90px;
+    }
+
+    .cover::after {
+      width: 135px;
+      height: 135px;
+      left: -60px;
+      bottom: -85px;
+    }
+
+    .brand-badge {
+      position: absolute;
+      left: 50%;
+      bottom: -44px;
+      transform: translateX(-50%);
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      border: 5px solid #fff;
+      box-shadow: 0 10px 28px rgba(70, 20, 45, .2);
+    }
+
+    .brand-badge span {
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #a52e65, #6c193d);
+      color: #fff;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .content {
+      padding: 62px 24px 25px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 13px;
+      border-radius: 30px;
+      background: var(--soft);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .3px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 29px;
+      line-height: 1.3;
+      color: var(--primary-dark);
+      font-weight: 800;
+    }
+
+    .owner {
+      margin: 6px 0 23px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .products {
+      margin: 0 0 20px;
+      padding: 17px 16px;
+      text-align: left;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #fff3f8, #fbe8f1);
+      border: 1px solid #f0d3e1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .products::after {
+      content: "✦";
+      position: absolute;
+      right: 14px;
+      top: 9px;
+      font-size: 22px;
+      color: #c65b86;
+      opacity: .7;
+    }
+
+    .products-title {
+      color: var(--primary-dark);
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 7px;
+    }
+
+    .products-text {
+      color: #655963;
+      font-size: 13px;
+      line-height: 1.8;
+      font-weight: 500;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 11px;
+      text-align: left;
+    }
+
+    .info-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 15px;
+      border-radius: 17px;
+      background: #fff8fb;
+      border: 1px solid #f2dce7;
+    }
+
+    .icon {
+      flex: 0 0 40px;
+      height: 40px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      background: #f6dce8;
+      color: var(--primary);
+      font-size: 19px;
+    }
+
+    .label {
+      font-size: 11px;
+      color: #9a8992;
+      margin-bottom: 2px;
+      font-weight: 600;
+    }
+
+    .value {
+      font-size: 14px;
+      line-height: 1.65;
+      font-weight: 600;
+    }
+
+    .phones a {
+      display: block;
+      color: var(--text);
+      text-decoration: none;
+      margin: 1px 0;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 17px;
+    }
+
+    .btn {
+      min-height: 48px;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, #9d2a5f, #70193f);
+      box-shadow: 0 9px 20px rgba(112,25,63,.2);
+    }
+
+    .btn-secondary {
+      color: var(--primary-dark);
+      background: #f8e8f0;
+      border: 1px solid #efd3e0;
+    }
+
+    .note {
+      margin-top: 19px;
+      padding-top: 17px;
+      border-top: 1px solid #f0e2e9;
+      font-size: 11px;
+      color: #a09299;
+    }
+
+    @media (max-width: 380px) {
+      .content { padding-left: 18px; padding-right: 18px; }
+      h1 { font-size: 25px; }
+      .actions { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <main class="card">
+
+      <div class="cover">
+        <div class="brand-badge">
+          <span>PFW</span>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="eyebrow">WELCOME</div>
+
+        <h1>পারুল ফ্যাশন ওয়ার্ল্ড</h1>
+        <p class="owner">Owner · সুমি আক্তার</p>
+        <section class="products">
+          <div class="products-title">আমাদের দোকানে যা পাওয়া যায়</div>
+          <div class="products-text">
+            এখানে উন্নত মানের ব্রা, পেন্টি, ব্লাউজ, পেটিকোট, স্পোর্টস গেঞ্জি,
+            ফিশ কাট, টপ টপ, বেল বেটি ইত্যাদি পাওয়া যায়।
+          </div>
+        </section>
+
+
+        <div class="info-list">
+
+          <div class="info-box">
+            <div class="icon">☎</div>
+            <div>
+              <div class="label">ফোন নম্বর — যেকোনো নম্বরে ট্যাপ করে কল করুন</div>
+              <div class="value phones">
+                <a href="tel:01616832092">01616832092</a>
+                <a href="tel:01625363166">01625363166</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <div class="icon">⌖</div>
+            <div>
+              <div class="label">দোকানের ঠিকানা</div>
+              <div class="value">
+                দোকান নং-৭২, আনারকলি সুপার মার্কেট (২য় তলা),<br>
+                সিদ্ধেশ্বরী, ঢাকা-১২১৭
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:01616832092">📞 01616832092</a>
+          <a class="btn btn-secondary" href="tel:01625363166">📞 01625363166</a>
+        </div>
+
+        <div class="note">আপনার যোগাযোগের জন্য ধন্যবাদ ❤️</div>
+      </div>
+
+    </main>
+  </div>
+</body>
+</html>
